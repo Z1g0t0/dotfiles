@@ -6,15 +6,11 @@ syntax enable
 
 filetype plugin on
 
+nnoremap <Esc> <NOP>
+nnoremap K <NOP>
 nnoremap <Leader>r :so ~/.vimrc <CR>
 
 command! MakeTags !ctags -R .
-
-call plug#begin('~/.vim/plugged')
-
-
-
-call plug#end()
 
 packadd termdebug
 
@@ -44,6 +40,7 @@ set guicursor=i:ver25-iCursor
 set ttimeout
 set ttimeoutlen=1
 set listchars=tab:>-,trail:~,extends:>,precedes:<,space:.
+set tags=tags;/
 
 " Manually set the status line color.
 "hi StatusLineTerm ctermbg=24 ctermfg=254 guibg=#7000FF guifg=#FFFFFF
@@ -91,3 +88,9 @@ let g:netrw_liststyle=3
 let g:netrw_list_hide=netrw_gitignore#Hide()
 let g:netrw_list_hide.=',\(^\|\s\s\)\zs\.\S\+'
 
+nnoremap t[ g<c-]>
+vnoremap t[ g<c-]>
+nnoremap t[ <c-]>
+vnoremap t[ <c-]>
+nnoremap t] :pop!<CR>
+vnoremap t] :pop!<CR>
