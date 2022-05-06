@@ -1,46 +1,75 @@
+" Needed so that vim still understands escape sequences
+" nnoremap <esc>^[ <esc>^[
+
 let mapleader =" "
-
-set statusline="%f%m%r%h%w [%Y] [0x%02.2B]%< %F%=%4v,%4l %3p%% of %L"
-
 syntax enable
-
 filetype plugin on
 
-nnoremap <Esc> <NOP>
 nnoremap K <NOP>
 nnoremap <Leader>r :so ~/.vimrc <CR>
 
-command! MakeTags !ctags -R .
+command! Tags !ctags -R .
 
 packadd termdebug
+let g:termdebug_popup = 0
+let g:termdebug_wide = 123
 
-set nocompatible
+" WSL yank support
+" Option 1 (only yank) ------------
+"let s:clip = '/mnt/c/Windows/System32/clip.exe'  " change this path according to your mount point
+"if executable(s:clip)
+"    augroup WSLYank
+"	autocmd!
+"        autocmd TextYankPost * if v:event.operator ==# 'y' | call system(s:clip, @0) | endif
+"    augroup END
+"endif
+" ------------
+
+" Option 2 (yank and paste) ------------
+" Requires win32yank.exe:
+"	curl -sLo /tmp/win32yank.zip https://github.com/equalsraf/win32yank/releases/download/v0.0.4/win32yank-x64.zip
+"	sudo apt install zip
+"	unzip -p /tmp/win32yank.zip win32yank.exe > /tmp/win32yank.exe
+"	chmod +x /tmp/win32yank.exe
+"	sudo mv /tmp/win32yank.exe /usr/local/bin/
+
+autocmd TextYankPost * call system('win32yank.exe -i --crlf', @")
+
+function! Paste(mode)
+    let @" = system('win32yank.exe -o --lf')
+	return a:mode
+endfunction
+map <expr> p Paste('p')
+map <expr> P Paste('P')
+" ------------
+
+set clipboard=unnamedplus
+set tags=./tags,tags;/
+set tagstack
+set notermguicolors t_Co=8
+set mouse=a
+set path+=**
 set nu
 set relativenumber
-set clipboard=unnamedplus
+set shiftwidth=4
+set smarttab
+set smartindent
+set nocompatible
 set nohlsearch
 set hidden
-set shiftwidth=4
-set smartindent
-set smarttab
 set noswapfile
 set nobackup
 set undodir=~/.vim/undodir
 set undofile
-set notermguicolors t_Co=8
-set path+=**
 set wildmenu
 set splitright splitbelow 
 set vb t_vb=
 set statusline=%{strftime('%c',getftime(expand('%')))}
-set mouse=a
-set listchars=tab:>-,trail:~,extends:>,precedes:<,space:.
 set ttyfast
 set guicursor=i:ver25-iCursor
 set ttimeout
 set ttimeoutlen=1
 set listchars=tab:>-,trail:~,extends:>,precedes:<,space:.
-set tags=tags;/
 
 " Manually set the status line color.
 "hi StatusLineTerm ctermbg=24 ctermfg=254 guibg=#7000FF guifg=#FFFFFF
@@ -54,6 +83,12 @@ else
     let &t_SI = "\e[5 q"
     let &t_EI = "\e[2 q"
 endif
+
+" ctags
+nnoremap t[ g<c-]>
+vnoremap t[ g<c-]>
+nnoremap t] :pop!<CR>
+vnoremap t] :pop!<CR>
 
 "Delete all comments
 map DAC# :g/^\s*#/d <CR>
@@ -71,7 +106,7 @@ nnoremap <silent><Leader>J :exe "resize " . (winheight(0) * 7/9)<CR>
 nnoremap <silent><Leader>L :exe "vertical resize " . (winwidth(0) * 9/7)<CR>
 nnoremap <silent><Leader>H :exe "vertical resize " . (winwidth(0) * 7/9)<CR>
 
-"Latex snippets
+"Latex snippets (snippet file with its literal text required at the path read)
 nnoremap ,lx\\ :-1read ~/.vim/snippets/latex/.Article<CR>11j6la
 nnoremap ,lxbf :-1read ~/.vim/snippets/latex/.textbf<CR>7la
 nnoremap ,lxit :-1read ~/.vim/snippets/latex/.textit<CR>7la
@@ -82,15 +117,9 @@ nnoremap ,lx3s :-1read ~/.vim/snippets/latex/.subsubsection<CR>14la
 
 "netrw
 let g:netrw_banner=0
-let g:netrw_browse_split=4
+let g:netrw_browse_split=0
 let g:netrw_altv=1
 let g:netrw_liststyle=3
 let g:netrw_list_hide=netrw_gitignore#Hide()
 let g:netrw_list_hide.=',\(^\|\s\s\)\zs\.\S\+'
 
-nnoremap t[ g<c-]>
-vnoremap t[ g<c-]>
-nnoremap t[ <c-]>
-vnoremap t[ <c-]>
-nnoremap t] :pop!<CR>
-vnoremap t] :pop!<CR>
