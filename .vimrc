@@ -1,11 +1,12 @@
 " Needed so that vim still understands escape sequences
 " nnoremap <esc>^[ <esc>^[
 
-let mapleader =" "
 syntax enable
 filetype plugin on
 
 nnoremap K <NOP>
+noremap <Space> <Nop>
+let mapleader=" "
 nnoremap <Leader>r :so ~/.vimrc <CR>
 
 command! Tags !ctags -R .
@@ -43,6 +44,8 @@ map <expr> p Paste('p')
 map <expr> P Paste('P')
 " ------------
 
+highlight LineNr ctermfg=yellow
+
 set clipboard=unnamedplus
 set tags=./tags,tags;/
 set tagstack
@@ -68,7 +71,7 @@ set statusline=%{strftime('%c',getftime(expand('%')))}
 set ttyfast
 set guicursor=i:ver25-iCursor
 set ttimeout
-set ttimeoutlen=1
+set timeoutlen=333
 set listchars=tab:>-,trail:~,extends:>,precedes:<,space:.
 
 " Manually set the status line color.
@@ -95,10 +98,10 @@ map DAC# :g/^\s*#/d <CR>
 map DAC// :g/^\s*#/d <CR>
 
 "Easy switching panes
-map <C-h> <C-w>h
-map <C-j> <C-w>j
-map <C-k> <C-w>k
-map <C-l> <C-w>l
+nnoremap <silent><Leader>h <C-w>h
+nnoremap <silent><Leader>j <C-w>j
+nnoremap <silent><Leader>k <C-w>k
+nnoremap <silent><Leader>l <C-w>l
 
 "Pane resizing
 nnoremap <silent><Leader>K :exe "resize " . (winheight(0) * 9/7)<CR>
@@ -123,3 +126,11 @@ let g:netrw_liststyle=3
 let g:netrw_list_hide=netrw_gitignore#Hide()
 let g:netrw_list_hide.=',\(^\|\s\s\)\zs\.\S\+'
 
+highlight Comment ctermfg=14
+highlight jsonQuote ctermfg=red
+
+
+highlight redOnes ctermfg=red
+call matchadd("redOnes", '\<False\>')
+call matchadd("redOnes", '\<None\>')
+call matchadd("redOnes", '\<NULL\>')

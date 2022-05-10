@@ -3,6 +3,9 @@
 #autoload -Uz promptinit
 #promptinit
 #prompt adam1
+#
+# 10ms for key sequences
+KEYTIMEOUT=1
 
 bindkey -v
 bindkey "^H" backward-delete-char
