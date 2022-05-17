@@ -15,8 +15,9 @@ packadd termdebug
 let g:termdebug_popup = 0
 let g:termdebug_wide = 123
 
-" WSL yank support
-" Option 1 (only yank) ------------
+" ------------ WSL yank support ------------
+" --- Option 1 (yank only) 
+"
 "let s:clip = '/mnt/c/Windows/System32/clip.exe'  " change this path according to your mount point
 "if executable(s:clip)
 "    augroup WSLYank
@@ -24,15 +25,16 @@ let g:termdebug_wide = 123
 "        autocmd TextYankPost * if v:event.operator ==# 'y' | call system(s:clip, @0) | endif
 "    augroup END
 "endif
-" ------------
-
-" Option 2 (yank and paste) ------------
-" Requires win32yank.exe:
-"	curl -sLo /tmp/win32yank.zip https://github.com/equalsraf/win32yank/releases/download/v0.0.4/win32yank-x64.zip
-"	sudo apt install zip
-"	unzip -p /tmp/win32yank.zip win32yank.exe > /tmp/win32yank.exe
-"	chmod +x /tmp/win32yank.exe
-"	sudo mv /tmp/win32yank.exe /usr/local/bin/
+"
+" --- || ---
+"
+" --- Option 2 (yank and paste) 
+" - Requires win32yank.exe:
+"	$ curl -sLo /tmp/win32yank.zip https://github.com/equalsraf/win32yank/releases/download/v0.0.4/win32yank-x64.zip
+"	$ sudo apt install zip
+"	$ unzip -p /tmp/win32yank.zip win32yank.exe > /tmp/win32yank.exe
+"	$ chmod +x /tmp/win32yank.exe
+"	$ sudo mv /tmp/win32yank.exe /usr/local/bin/
 
 autocmd TextYankPost * call system('win32yank.exe -i --crlf', @")
 
@@ -42,9 +44,10 @@ function! Paste(mode)
 endfunction
 map <expr> p Paste('p')
 map <expr> P Paste('P')
-" ------------
 
-highlight LineNr ctermfg=yellow
+" --- || ---
+"
+" ------------ || ------------
 
 set clipboard=unnamedplus
 set tags=./tags,tags;/
@@ -67,7 +70,7 @@ set undofile
 set wildmenu
 set splitright splitbelow 
 set vb t_vb=
-set statusline=%{strftime('%c',getftime(expand('%')))}
+    set statusline=%{strftime('%c',getftime(expand('%')))}
 set ttyfast
 set guicursor=i:ver25-iCursor
 set ttimeout
@@ -109,7 +112,7 @@ nnoremap <silent><Leader>J :exe "resize " . (winheight(0) * 7/9)<CR>
 nnoremap <silent><Leader>L :exe "vertical resize " . (winwidth(0) * 9/7)<CR>
 nnoremap <silent><Leader>H :exe "vertical resize " . (winwidth(0) * 7/9)<CR>
 
-"Latex snippets (snippet file with its literal text required at the path read)
+"Latex snippets 
 nnoremap ,lx\\ :-1read ~/.vim/snippets/latex/.Article<CR>11j6la
 nnoremap ,lxbf :-1read ~/.vim/snippets/latex/.textbf<CR>7la
 nnoremap ,lxit :-1read ~/.vim/snippets/latex/.textit<CR>7la
@@ -126,11 +129,14 @@ let g:netrw_liststyle=3
 let g:netrw_list_hide=netrw_gitignore#Hide()
 let g:netrw_list_hide.=',\(^\|\s\s\)\zs\.\S\+'
 
+highlight LineNr ctermfg=yellow
 highlight Comment ctermfg=14
 highlight jsonQuote ctermfg=red
-
 
 highlight redOnes ctermfg=red
 call matchadd("redOnes", '\<False\>')
 call matchadd("redOnes", '\<None\>')
 call matchadd("redOnes", '\<NULL\>')
+
+highlight greenOnes ctermfg=green
+call matchadd("greenOnes", '\<True\>')
