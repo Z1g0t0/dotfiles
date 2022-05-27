@@ -7,6 +7,7 @@ filetype plugin on
 nnoremap K <NOP>
 noremap <Space> <Nop>
 let mapleader=" "
+nnoremap <Space> <C-w>
 nnoremap <Leader>r :so ~/.vimrc <CR>
 
 command! Tags !ctags -R .
@@ -49,6 +50,8 @@ map <expr> P Paste('P')
 "
 " ------------ || ------------
 
+let &statusline='%#Normal# '
+
 set clipboard=unnamedplus
 set tags=./tags,tags;/
 set tagstack
@@ -70,16 +73,37 @@ set undofile
 set wildmenu
 set splitright splitbelow 
 set vb t_vb=
-    set statusline=%{strftime('%c',getftime(expand('%')))}
-set ttyfast
+set statusline=%{strftime('%c',getftime(expand('%')))}
+"set ttyfast
 set guicursor=i:ver25-iCursor
 set ttimeout
 set timeoutlen=333
 set listchars=tab:>-,trail:~,extends:>,precedes:<,space:.
+set fillchars+=vert:│
+
+" Colors
+
+hi VertSplit cterm=NONE ctermfg=4
 
 " Manually set the status line color.
-"hi StatusLineTerm ctermbg=24 ctermfg=254 guibg=#7000FF guifg=#FFFFFF
-"hi StatusLineTermNC ctermbg=252 ctermfg=238 guibg=#d0d0d0 guifg=#444444
+hi StatusLine ctermbg=black ctermfg=green 
+hi StatusLineNC ctermbg=black ctermfg=red 
+"hi StatusLineTerm ctermbg=black ctermfg=green guibg=magenta guifg=red
+"hi StatusLineTermNC ctermbg=black ctermfg=green guibg=magenta guifg=red
+
+highlight LineNr ctermfg=yellow
+highlight Comment ctermfg=14
+highlight jsonQuote ctermfg=red
+" Red
+highlight redOnes ctermfg=red
+call matchadd("redOnes", '\<False\>')
+call matchadd("redOnes", '\<NULL\>')
+" Green
+highlight greenOnes ctermfg=green
+call matchadd("greenOnes", '\<True\>')
+" Grey
+highlight greyOnes ctermfg=grey
+call matchadd("greyOnes", '\<None\>')
 
 "Thin cursor at insert mode
 if exists('$TMUX')
@@ -90,15 +114,15 @@ else
     let &t_EI = "\e[2 q"
 endif
 
+" Auto center navigation
+nnoremap <expr> \ "'" . nr2char(getchar()) . 'zz'
+nnoremap <C-o> <C-o>zz
+
 " ctags
 nnoremap t[ g<c-]>
 vnoremap t[ g<c-]>
 nnoremap t] :pop!<CR>
 vnoremap t] :pop!<CR>
-
-"Delete all comments
-map DAC# :g/^\s*#/d <CR>
-map DAC// :g/^\s*#/d <CR>
 
 "Easy switching panes
 nnoremap <silent><Leader>h <C-w>h
@@ -107,10 +131,69 @@ nnoremap <silent><Leader>k <C-w>k
 nnoremap <silent><Leader>l <C-w>l
 
 "Pane resizing
-nnoremap <silent><Leader>K :exe "resize " . (winheight(0) * 9/7)<CR>
-nnoremap <silent><Leader>J :exe "resize " . (winheight(0) * 7/9)<CR>
-nnoremap <silent><Leader>L :exe "vertical resize " . (winwidth(0) * 9/7)<CR>
-nnoremap <silent><Leader>H :exe "vertical resize " . (winwidth(0) * 7/9)<CR>
+" Tmux-like window resizing
+function! IsEdgeWindowSelected(direction)
+    let l:curwindow = winnr()
+    exec "wincmd ".a:direction
+    let l:result = l:curwindow == winnr()
+
+    if (!l:result)
+        " Go back to the previous window
+        exec l:curwindow."wincmd w"
+    endif
+
+    return l:result
+endfunction
+
+function! GetAction(direction)
+    let l:keys = ['h', 'j', 'k', 'l']
+    let l:actions = ['vertical resize -', 'resize +', 'resize -', 'vertical resize +']
+    return get(l:actions, index(l:keys, a:direction))
+endfunction
+
+function! GetOpposite(direction)
+    let l:keys = ['h', 'j', 'k', 'l']
+    let l:opposites = ['l', 'k', 'j', 'h']
+    return get(l:opposites, index(l:keys, a:direction))
+endfunction
+
+function! TmuxResize(direction, amount)
+    " v >
+    if (a:direction == 'j' || a:direction == 'l')
+        if IsEdgeWindowSelected(a:direction)
+            let l:opposite = GetOpposite(a:direction)
+            let l:curwindow = winnr()
+            exec 'wincmd '.l:opposite
+            let l:action = GetAction(a:direction)
+            exec l:action.a:amount
+            exec l:curwindow.'wincmd w'
+            return
+        endif
+    " < ^
+    elseif (a:direction == 'h' || a:direction == 'k')
+        let l:opposite = GetOpposite(a:direction)
+        if IsEdgeWindowSelected(l:opposite)
+            let l:curwindow = winnr()
+            exec 'wincmd '.a:direction
+            let l:action = GetAction(a:direction)
+            exec l:action.a:amount
+            exec l:curwindow.'wincmd w'
+            return
+        endif
+    endif
+
+    let l:action = GetAction(a:direction)
+    exec l:action.a:amount
+endfunction
+
+" Map to buttons
+nnoremap <silent><Leader>H :call TmuxResize('h', 1)<CR>
+nnoremap <silent><Leader>J :call TmuxResize('j', 1)<CR>
+nnoremap <silent><Leader>K :call TmuxResize('k', 1)<CR>
+nnoremap <silent><Leader>L :call TmuxResize('l', 1)<CR>
+
+"Delete all comments
+map DAC# :g/^\s*#/d <CR> map DAC// :g/^\s*#/d <CR> 
 
 "Latex snippets 
 nnoremap ,lx\\ :-1read ~/.vim/snippets/latex/.Article<CR>11j6la
@@ -129,14 +212,10 @@ let g:netrw_liststyle=3
 let g:netrw_list_hide=netrw_gitignore#Hide()
 let g:netrw_list_hide.=',\(^\|\s\s\)\zs\.\S\+'
 
-highlight LineNr ctermfg=yellow
-highlight Comment ctermfg=14
-highlight jsonQuote ctermfg=red
+call plug#begin('~/.vim/plugged')
 
-highlight redOnes ctermfg=red
-call matchadd("redOnes", '\<False\>')
-call matchadd("redOnes", '\<None\>')
-call matchadd("redOnes", '\<NULL\>')
+Plug 'tpope/vim-fugitive'
+Plug 'idanarye/vim-merginal'
 
-highlight greenOnes ctermfg=green
-call matchadd("greenOnes", '\<True\>')
+call plug#end()
+
