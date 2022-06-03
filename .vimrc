@@ -52,8 +52,9 @@ map <expr> P Paste('P')
 
 let &statusline='%#Normal# '
 
+set mouse=a
 set clipboard=unnamedplus
-set tags=./tags,tags;/
+set tags=./tags,tags
 set tagstack
 set notermguicolors t_Co=8
 set mouse=a
@@ -87,23 +88,28 @@ hi VertSplit cterm=NONE ctermfg=4
 
 " Manually set the status line color.
 hi StatusLine ctermbg=black ctermfg=green 
-hi StatusLineNC ctermbg=black ctermfg=red 
+hi StatusLineNC ctermbg=green ctermfg=14 "Dark Green
 "hi StatusLineTerm ctermbg=black ctermfg=green guibg=magenta guifg=red
 "hi StatusLineTermNC ctermbg=black ctermfg=green guibg=magenta guifg=red
 
-highlight LineNr ctermfg=yellow
-highlight Comment ctermfg=14
-highlight jsonQuote ctermfg=red
+hi LineNr ctermfg=yellow
+hi Comment ctermfg=14	" Dark Green
+hi jsonQuote ctermfg=red
+hi Include ctermfg=3	" Purple
+hi Error term=reverse cterm=bold ctermfg=black ctermbg=5 "Red
+hi Special cterm=bold ctermfg=5  "Red
+
 " Red
 highlight redOnes ctermfg=red
-call matchadd("redOnes", '\<False\>')
-call matchadd("redOnes", '\<NULL\>')
+call matchadd("redOnes", '\<\cFalse\>')
+call matchadd("redOnes", '\<\cNULL\>')
+call matchadd("redones", '\Error\')
 " Green
 highlight greenOnes ctermfg=green
-call matchadd("greenOnes", '\<True\>')
+call matchadd("greenOnes", '\<\cTrue\>')
 " Grey
 highlight greyOnes ctermfg=grey
-call matchadd("greyOnes", '\<None\>')
+call matchadd("greyOnes", '\<\cNone\>')
 
 "Thin cursor at insert mode
 if exists('$TMUX')
