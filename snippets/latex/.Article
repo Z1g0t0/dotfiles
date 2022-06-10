@@ -1,0 +1,16 @@
+\documentclass{article}
+
+\usepackage\usepackage{amsfonts}
+\usepackage{graphicx}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[portuguese]{babel}
+\usepackage{amssymb}
+
+\begin{document}
+
+\title{}
+\author{Eduardo Takeshi Voltareli Suzuki}
+\maketitle
+
+\end{document}
