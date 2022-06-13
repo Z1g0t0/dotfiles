@@ -54,7 +54,7 @@ let &statusline='%#Normal# '
 
 set mouse=a
 set clipboard=unnamedplus
-set tags=./tags,tags
+set tags=./tags,tags;
 set tagstack
 set notermguicolors t_Co=8
 set mouse=a
@@ -123,6 +123,7 @@ endif
 " Auto center navigation
 nnoremap <expr> \ "'" . nr2char(getchar()) . 'zz'
 nnoremap <C-o> <C-o>zz
+nnoremap n nzz
 
 " ctags
 nnoremap t[ g<c-]>
@@ -201,7 +202,8 @@ nnoremap <silent><Leader>L :call TmuxResize('l', 1)<CR>
 "Delete all comments
 map DAC# :g/^\s*#/d <CR> map DAC// :g/^\s*#/d <CR> 
 
-"Latex snippets 
+" --- SNIPPETS --- 
+" Latex 
 nnoremap ,lx\\ :-1read ~/.vim/snippets/latex/.Article<CR>11j6la
 nnoremap ,lxbf :-1read ~/.vim/snippets/latex/.textbf<CR>7la
 nnoremap ,lxit :-1read ~/.vim/snippets/latex/.textit<CR>7la
@@ -209,6 +211,12 @@ nnoremap ,lxtt :-1read ~/.vim/snippets/latex/.texttt<CR>7la
 nnoremap ,lxs :-1read ~/.vim/snippets/latex/.section<CR>8la
 nnoremap ,lx2s :-1read ~/.vim/snippets/latex/.subsection<CR>11la
 nnoremap ,lx3s :-1read ~/.vim/snippets/latex/.subsubsection<CR>14la
+
+" Python
+
+nnoremap ,pdb :-1read ~/.vim/snippets/python/.pdb<CR>0i<Tab>
+
+" ---
 
 "netrw
 let g:netrw_banner=0
@@ -220,6 +228,7 @@ let g:netrw_list_hide.=',\(^\|\s\s\)\zs\.\S\+'
 
 call plug#begin('~/.vim/plugged')
 
+Plug 'tpope/vim-abolish'
 Plug 'tpope/vim-fugitive'
 Plug 'idanarye/vim-merginal'
 
