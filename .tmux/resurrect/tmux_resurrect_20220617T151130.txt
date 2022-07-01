@@ -1,0 +1,57 @@
+pane	0	0	0	:	0	LAPTOP-0QNG7EMV	:/home/takeshi	0	vim	:vim .vimrc
+pane	0	0	0	:	1	LAPTOP-0QNG7EMV	:/home/takeshi/.vim/syntax	0	vim	:vim python.vim
+pane	0	0	0	:	2	LAPTOP-0QNG7EMV	:/home/takeshi	1	vim	:vim .tmux.conf
+pane	0	1	0	:	0	LAPTOP-0QNG7EMV	:/mnt/c/repos/FKN/TA/testautomationlib	0	vim	:vim main_integrador.py
+pane	0	1	0	:	1	LAPTOP-0QNG7EMV	:/mnt/c/repos/FKN/TA/testautomationlib/sifn	1	vim	:vim SIFN.py
+pane	0	1	0	:	2	LAPTOP-0QNG7EMV	:/mnt/c/repos/FKN/TA/testautomationlib/windowsApplication	0	vim	:vim config.json
+pane	0	1	0	:	3	LAPTOP-0QNG7EMV	:/mnt/c/repos/FKN/TA/testautomationlib	0	vim	:vim robot_testes/testes_requests.robot
+pane	0	1	0	:	4	LAPTOP-0QNG7EMV	:/mnt/c/repos/FKN/TA/testautomationlib/robot_testes	0	vim	:vim requisicoes.py
+pane	0	2	0	:-	0	LAPTOP-0QNG7EMV	:/mnt/c/repos/FKN/TA/testautomationlib/windowsApplication	0	vim	:vim windows.py
+pane	0	2	0	:-	1	LAPTOP-0QNG7EMV	:/mnt/c/repos/FKN/TA/testautomationlib/windowsApplication	0	vim	:vim sifn.py
+pane	0	2	0	:-	2	LAPTOP-0QNG7EMV	:/mnt/c/repos/FKN/TA/testautomationlib/utils	0	vim	:vim python_utils.py
+pane	0	2	0	:-	3	LAPTOP-0QNG7EMV	:/mnt/c/repos/FKN/TA/testautomationlib/windowsApplication	1	vim	:vim infos_parser.py
+pane	0	3	1	:*	0	LAPTOP-0QNG7EMV	:/mnt/c/repos/FKN/TA/testautomationlib/integrador	1	vim	:vim request.py
+pane	0	3	1	:*	1	LAPTOP-0QNG7EMV	:/mnt/c/repos/FKN/TA/testautomationlib/integrador	0	vim	:vim integrador.py
+pane	0	4	0	:	0	LAPTOP-0QNG7EMV	:/mnt/c/repos/FKN/TA/testautomationlib/testes_integrador	1	vim	:vim teste_cliente.py
+pane	0	4	0	:	1	LAPTOP-0QNG7EMV	:/mnt/c/repos/FKN/TA/testautomationlib/integrador	0	vim	:vim cliente.py
+pane	0	4	0	:	2	LAPTOP-0QNG7EMV	:/mnt/c/repos/FKN/TA/testautomationlib/robot_testes/dump	0	vim	:vim sifn001_data-screen_18-07.json
+pane	0	4	0	:	3	LAPTOP-0QNG7EMV	:/mnt/c/repos/FKN/TA/testautomationlib/robot_testes/dump	0	vim	:vim sifn001_infos-data.json
+pane	0	5	0	:	0	LAPTOP-0QNG7EMV	:/mnt/c/repos/FKN/TA/testautomationlib/testes_integrador	1	vim	:vim teste_vendedor.py
+pane	0	5	0	:	1	LAPTOP-0QNG7EMV	:/mnt/c/repos/FKN/TA/testautomationlib/integrador	0	vim	:vim vendedor.py
+pane	0	5	0	:	2	LAPTOP-0QNG7EMV	:/mnt/c/repos/FKN/TA/testautomationlib	0	zsh	:
+pane	0	6	0	:	0	LAPTOP-0QNG7EMV	:/mnt/c/repos/FKN/TA/testautomationlib/testes_integrador	0	vim	:vim teste_fornecedor.py
+pane	0	6	0	:	1	LAPTOP-0QNG7EMV	:/mnt/c/repos/FKN/TA/testautomationlib/integrador	1	vim	:vim fornecedor.py
+pane	0	7	0	:	0	LAPTOP-0QNG7EMV	:/mnt/c/repos/FKN/TA/testautomationlib/testes_integrador	1	vim	:vim teste_pedido.py
+pane	0	7	0	:	1	LAPTOP-0QNG7EMV	:/mnt/c/repos/FKN/TA/testautomationlib/integrador	0	vim	:vim pedido.py
+pane	0	7	0	:	2	LAPTOP-0QNG7EMV	:/mnt/c/repos/FKN/TA/testautomationlib/integrador	0	vim	:vim duplicata.py
+pane	0	7	0	:	3	LAPTOP-0QNG7EMV	:/mnt/c/repos/FKN/TA/testautomationlib/testes_integrador	0	vim	:vim teste_duplicata.py
+pane	0	8	0	:	0	LAPTOP-0QNG7EMV	:/mnt/c/repos/FKN/TA/testautomationlib/testes_integrador	1	vim	:vim teste_produto.py
+pane	0	8	0	:	1	LAPTOP-0QNG7EMV	:/mnt/c/repos/FKN/TA/testautomationlib/integrador	0	vim	:vim produto.py
+pane	0	9	0	:	0	LAPTOP-0QNG7EMV	:/mnt/c/repos/FKN/TA/testautomationlib/testes_integrador	0	vim	:vim teste_linha.py
+pane	0	9	0	:	1	LAPTOP-0QNG7EMV	:/mnt/c/repos/FKN/TA/testautomationlib/testes_integrador	0	vim	:vim teste_grupo.py
+pane	0	9	0	:	2	LAPTOP-0QNG7EMV	:/mnt/c/repos/FKN/TA/testautomationlib/testes_integrador	1	vim	:vim teste_familia.py
+pane	0	9	0	:	3	LAPTOP-0QNG7EMV	:/mnt/c/repos/FKN/TA/testautomationlib/integrador	0	vim	:vim familia.py
+pane	0	10	0	:	0	LAPTOP-0QNG7EMV	:/mnt/c/repos/FKN/TA/testautomationlib/testes_integrador	0	vim	:vim teste_preco.py
+pane	0	10	0	:	1	LAPTOP-0QNG7EMV	:/mnt/c/repos/FKN/TA/testautomationlib/integrador	1	vim	:vim preco.py
+pane	0	11	0	:	0	LAPTOP-0QNG7EMV	:/mnt/c/repos/FKN/TA/testautomationlib/testes_integrador	0	vim	:vim teste_contato.py
+pane	0	11	0	:	1	LAPTOP-0QNG7EMV	:/mnt/c/repos/FKN/TA/testautomationlib/testes_integrador	0	vim	:vim teste_departamento.py
+pane	0	11	0	:	2	LAPTOP-0QNG7EMV	:/mnt/c/repos/FKN/TA/testautomationlib/testes_integrador	0	vim	:vim teste_estoque.py
+pane	0	11	0	:	3	LAPTOP-0QNG7EMV	:/mnt/c/repos/FKN/TA/testautomationlib/testes_integrador	1	vim	:vim teste_endereco.py
+pane	2	0	1	:*	0	LAPTOP-0QNG7EMV	:/home/takeshi	1	zsh	:
+pane	UTFPR-1	0	1	:*	0	LAPTOP-0QNG7EMV	:/home/takeshi/repos/UTFPR/Trabalho_Integracao_1/Resumos	0	zsh	:
+pane	UTFPR-1	0	1	:*	1	LAPTOP-0QNG7EMV	:/home/takeshi/repos/UTFPR/Trabalho_Integracao_1/Resumos	1	zsh	:
+window	0	0	:dot	0	:	c6aa,192x62,0,0{96x62,0,0[96x49,0,0,1,96x12,0,50,2],95x62,97,0,3}	off
+window	0	1	:main	0	:	1e34,192x62,0,0{96x62,0,0[96x35,0,0,4,96x19,0,36,5,96x6,0,56,6],95x62,97,0[95x24,97,0,7,95x37,97,25,8]}	off
+window	0	2	:Windows/Sifn	0	:-	30f9,192x62,0,0{96x62,0,0,9,95x62,97,0[95x31,97,0,10,95x15,97,32,11,95x14,97,48,12]}	off
+window	0	3	:Request/Integrador	1	:*	f949,192x62,0,0{96x62,0,0,13,95x62,97,0,14}	off
+window	0	4	:Cliente	0	:	efff,192x62,0,0{96x62,0,0,15,95x62,97,0[95x31,97,0,16,95x30,97,32{44x30,97,32,17,50x30,142,32,18}]}	off
+window	0	5	:Vendedor	0	:	3fb1,192x62,0,0{96x62,0,0,19,95x62,97,0[95x37,97,0,20,95x24,97,38,21]}	off
+window	0	6	:Fornecedor	0	:	b948,192x62,0,0{96x62,0,0,22,95x62,97,0,23}	off
+window	0	7	:Pedido	0	:	b454,192x62,0,0{95x62,0,0,24,96x62,96,0[96x20,96,0,25,96x19,96,21,26,96x21,96,41,27]}	off
+window	0	8	:Produto	0	:	b957,192x62,0,0{96x62,0,0,28,95x62,97,0,29}	off
+window	0	9	:UnderProd	0	:	4492,192x62,0,0{96x62,0,0[96x31,0,0,31,96x30,0,32,30],95x62,97,0[95x31,97,0,32,95x30,97,32,33]}	off
+window	0	10	:Preco	0	:	f94e,192x62,0,0{96x62,0,0,34,95x62,97,0,35}	off
+window	0	11	:vim	0	:	c7f6,192x62,0,0{96x62,0,0[96x31,0,0,36,96x30,0,32,37],95x62,97,0[95x31,97,0,38,95x30,97,32,39]}	:
+window	2	0	:zsh	1	:*	dd10,192x62,0,0,40	:
+window	UTFPR-1	0	:TI_1	1	:*	b948,192x62,0,0{96x62,0,0,41,95x62,97,0,42}	off
+state	0	UTFPR-1

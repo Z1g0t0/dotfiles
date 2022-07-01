@@ -1,0 +1,49 @@
+pane	0	0	0	:	0	LAPTOP-0QNG7EMV	:/home/takeshi	1	vim	:vim .vimrc
+pane	0	0	0	:	1	LAPTOP-0QNG7EMV	:/home/takeshi	0	vim	:vim .tmux.conf
+pane	0	0	0	:	2	LAPTOP-0QNG7EMV	:/home/takeshi/.vim/snippets/python	0	zsh	:
+pane	0	1	0	:-	0	LAPTOP-0QNG7EMV	:/mnt/c/repos/FKN/TA/testautomationlib	0	vim	:vim main_integrador.py
+pane	0	1	0	:-	1	LAPTOP-0QNG7EMV	:/mnt/c/repos/FKN/TA/testautomationlib/windowsApplication	0	vim	:vim config.json
+pane	0	1	0	:-	2	LAPTOP-0QNG7EMV	:/mnt/c/repos/FKN/TA/testautomationlib	1	vim	:vim robot_testes/testes_requests.robot
+pane	0	1	0	:-	3	LAPTOP-0QNG7EMV	:/mnt/c/repos/FKN/TA/testautomationlib/robot_testes	0	vim	:vim requisicoes.py
+pane	0	2	1	:*	0	LAPTOP-0QNG7EMV	:/mnt/c/repos/FKN/TA/testautomationlib/windowsApplication	0	vim	:vim windows.py
+pane	0	2	1	:*	1	LAPTOP-0QNG7EMV	:/mnt/c/repos/FKN/TA/testautomationlib	0	vim	:vim sifn.py
+pane	0	2	1	:*	2	LAPTOP-0QNG7EMV	:/mnt/c/repos/FKN/TA/testautomationlib/utils	1	vim	:vim python_utils.py
+pane	0	3	0	:	0	LAPTOP-0QNG7EMV	:/mnt/c/repos/FKN/TA/testautomationlib/integrador	1	vim	:vim request.py
+pane	0	3	0	:	1	LAPTOP-0QNG7EMV	:/mnt/c/repos/FKN/TA/testautomationlib/integrador	0	vim	:vim integrador.py
+pane	0	4	0	:	0	LAPTOP-0QNG7EMV	:/mnt/c/repos/FKN/TA/testautomationlib/testes_integrador	1	vim	:vim teste_cliente.py
+pane	0	4	0	:	1	LAPTOP-0QNG7EMV	:/mnt/c/repos/FKN/TA/testautomationlib/integrador	0	vim	:vim cliente.py
+pane	0	5	0	:	0	LAPTOP-0QNG7EMV	:/mnt/c/repos/FKN/TA/testautomationlib/testes_integrador	1	vim	:vim teste_vendedor.py
+pane	0	5	0	:	1	LAPTOP-0QNG7EMV	:/mnt/c/repos/FKN/TA/testautomationlib/integrador	0	vim	:vim vendedor.py
+pane	0	5	0	:	2	LAPTOP-0QNG7EMV	:/mnt/c/repos/FKN/TA/testautomationlib	0	zsh	:
+pane	0	6	0	:	0	LAPTOP-0QNG7EMV	:/mnt/c/repos/FKN/TA/testautomationlib/testes_integrador	1	vim	:vim teste_pedido.py
+pane	0	6	0	:	1	LAPTOP-0QNG7EMV	:/mnt/c/repos/FKN/TA/testautomationlib/integrador	0	vim	:vim pedido.py
+pane	0	6	0	:	2	LAPTOP-0QNG7EMV	:/mnt/c/repos/FKN/TA/testautomationlib/testes_integrador	0	vim	:vim teste_duplicata.py
+pane	0	7	0	:	0	LAPTOP-0QNG7EMV	:/mnt/c/repos/FKN/TA/testautomationlib/testes_integrador	1	vim	:vim teste_duplicata.py
+pane	0	7	0	:	1	LAPTOP-0QNG7EMV	:/mnt/c/repos/FKN/TA/testautomationlib/integrador	0	vim	:vim duplicata.py
+pane	0	7	0	:	2	LAPTOP-0QNG7EMV	:/mnt/c/repos/FKN/TA/testautomationlib/sifn	0	vim	:vim SIFN.py
+pane	0	8	0	:	0	LAPTOP-0QNG7EMV	:/mnt/c/repos/FKN/TA/testautomationlib/testes_integrador	1	vim	:vim teste_preco.py
+pane	0	8	0	:	1	LAPTOP-0QNG7EMV	:/mnt/c/repos/FKN/TA/testautomationlib/integrador	0	vim	:vim preco.py
+pane	0	9	0	:	0	LAPTOP-0QNG7EMV	:/mnt/c/repos/FKN/TA/testautomationlib	1	vim	:vim teste_produto.py
+pane	0	9	0	:	1	LAPTOP-0QNG7EMV	:/mnt/c/repos/FKN/TA/testautomationlib/integrador	0	vim	:vim produto.py
+pane	0	9	0	:	2	LAPTOP-0QNG7EMV	:/mnt/c/repos/FKN/TA/testautomationlib/robot_testes/dump	0	vim	:vim sifn008_infos_18-007.json
+pane	0	9	0	:	3	LAPTOP-0QNG7EMV	:/mnt/c/repos/FKN/TA/testautomationlib/robot_testes/dump	0	vim	:vim sifn710_datas-screen_18-07.json
+pane	0	10	0	:	0	LAPTOP-0QNG7EMV	:/mnt/c/repos/FKN/TA/testautomationlib	1	zsh	:
+pane	3	0	1	:*	0	LAPTOP-0QNG7EMV	:/home/takeshi	1	zsh	:
+pane	4	0	1	:*	0	LAPTOP-0QNG7EMV	:/home/takeshi	1	zsh	:
+pane	UTFPR-1	0	1	:*	0	LAPTOP-0QNG7EMV	:/home/takeshi/repos/UTFPR/Trabalho_Integracao_1	0	zsh	:
+pane	UTFPR-1	0	1	:*	1	C:WindowsSystem32WindowsPowerShellv1.0powershell.exe	:/home/takeshi/repos/UTFPR/Trabalho_Integracao_1	1	zsh	:
+window	0	0	:dot	0	:	4e26,192x62,0,0{96x62,0,0,1,95x62,97,0[95x46,97,0,2,95x15,97,47,3]}	off
+window	0	1	:main	0	:-	5275,192x62,0,0{96x62,0,0[96x51,0,0,4,96x10,0,52,5],95x62,97,0[95x18,97,0,6,95x43,97,19,7]}	off
+window	0	2	:Windows/Sifn	1	:*	f8f7,192x62,0,0{96x62,0,0,8,95x62,97,0[95x31,97,0,9,95x30,97,32,10]}	off
+window	0	3	:Request/Integrador	0	:	f944,192x62,0,0{96x62,0,0,11,95x62,97,0,12}	off
+window	0	4	:Cliente	0	:	f949,192x62,0,0{96x62,0,0,13,95x62,97,0,14}	off
+window	0	5	:Vendedor	0	:	5eb5,192x62,0,0{96x62,0,0,15,95x62,97,0[95x37,97,0,16,95x24,97,38,17]}	off
+window	0	6	:Pedido	0	:	0c05,192x62,0,0{96x62,0,0,18,95x62,97,0[95x31,97,0,19,95x30,97,32,20]}	off
+window	0	7	:Duplicata	0	:	b9a2,192x62,0,0{96x62,0,0,21,95x62,97,0[95x46,97,0,22,95x15,97,47,23]}	off
+window	0	8	:Preco	0	:	b94d,192x62,0,0{96x62,0,0,24,95x62,97,0,25}	off
+window	0	9	:Produto	0	:	e801,192x62,0,0{96x62,0,0,26,95x62,97,0[95x31,97,0,27,95x30,97,32{50x30,97,32,29,44x30,148,32,30}]}	off
+window	0	10	:zsh	0	:	5d11,192x62,0,0,31	:
+window	3	0	:zsh	1	:*	5d12,192x62,0,0,32	:
+window	4	0	:zsh	1	:*	5d15,192x62,0,0,35	:
+window	UTFPR-1	0	:TI_1	1	:*	794c,192x62,0,0{96x62,0,0,33,95x62,97,0,34}	off
+state	0	UTFPR-1
