@@ -101,6 +101,7 @@ hi jsonQuote ctermfg=red
 hi Include ctermfg=3	"Purple
 hi Error term=reverse cterm=bold ctermfg=black ctermbg=5 "Red
 hi Special cterm=bold ctermfg=5  "Red
+hi MatchParen ctermfg=3
 
 " Git
 set diffopt=vertical
@@ -151,6 +152,7 @@ augroup END
 nnoremap <expr> \ "'" . nr2char(getchar()) . 'zz'
 nnoremap <C-o> <C-o>zz
 nnoremap n nzz
+nnoremap N Nzz
 
 " ctags
 nnoremap t[ g<c-]>
@@ -256,7 +258,7 @@ let g:netrw_liststyle=3
 let g:netrw_list_hide=netrw_gitignore#Hide()
 let g:netrw_list_hide.=',\(^\|\s\s\)\zs\.\S\+'
 
-call plug#begin('~/.vim/plugged')
+call plug#begin()
 
 Plug 'tpope/vim-abolish'
 Plug 'tpope/vim-fugitive'
