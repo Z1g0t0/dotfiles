@@ -23,7 +23,8 @@ bindkey '^w' my-backward-kill-word
 export TERM=screen-256color
 autoload colors && colors
 
-PS1="%B%{$fg[green]%}%n%{$fg[red]%}:%{$fg[yellow]%}<%{$fg[blue]%}%1~%{$fg[yellow]%}>%{$reset_color%} %b"
+#PS1="%B%{$fg[green]%}%n%{$fg[red]%}:%{$fg[blue]%}%1~%{$fg[yellow]%}|%{$fg[green]%}!%{$fg[yellow]%}|%{$reset_color%} %b"
+PS1="%B%{$fg[green]%}%n%{$fg[red]%}@%{$fg[blue]%}%1~%{$fg[yellow]%}▲%{$reset_color%} %b"
 RPROMPT="%B%{$fg[green]%}%*%b"
 
 setopt histignorealldups sharehistory
