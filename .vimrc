@@ -3,6 +3,7 @@
 
 syntax enable
 filetype plugin on
+filetype plugin indent on
 
 nnoremap K <NOP>
 noremap <Space> <Nop>
@@ -45,10 +46,9 @@ function! Paste(mode)
 endfunction
 map <expr> p Paste('p')
 map <expr> P Paste('P')
-
 " --- || ---
-"
 " ------------ || ------------
+
 
 let &statusline='%#Normal# '
 
@@ -61,7 +61,7 @@ set mouse=a
 set path+=**
 set nu
 set relativenumber
-set shiftwidth=4
+set ai ts=4 sw=4
 set smarttab
 set smartindent
 set nocompatible
@@ -92,7 +92,7 @@ hi StatusLineNC ctermbg=green ctermfg=14 "Dark Green
 "hi StatusLineTerm ctermbg=black ctermfg=green guibg=magenta guifg=red
 "hi StatusLineTermNC ctermbg=black ctermfg=green guibg=magenta guifg=red
 
-hi Visual ctermbg=2 ctermfg=4
+hi Visual ctermbg=0 ctermfg=green
 hi LineNr ctermfg=yellow
 hi Folded ctermfg=yellow ctermbg=black
 hi FoldColumn ctermfg=yellow ctermbg=black
@@ -101,7 +101,7 @@ hi jsonQuote ctermfg=red
 hi Include ctermfg=3	"Purple
 hi Error term=reverse cterm=bold ctermfg=black ctermbg=5 "Red
 hi Special cterm=bold ctermfg=5  "Red
-hi MatchParen ctermfg=3
+hi MatchParen ctermfg=0
 
 " Git
 set diffopt=vertical
