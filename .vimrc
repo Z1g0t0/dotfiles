@@ -38,14 +38,14 @@ let g:termdebug_wide = 123
 "	$ chmod +x /tmp/win32yank.exe
 "	$ sudo mv /tmp/win32yank.exe /usr/local/bin/
 
-autocmd TextYankPost * call system('win32yank.exe -i --crlf', @")
-
-function! Paste(mode)
-    let @" = system('win32yank.exe -o --lf')
-	return a:mode
-endfunction
-map <expr> p Paste('p')
-map <expr> P Paste('P')
+"autocmd TextYankPost * call system('win32yank.exe -i --crlf', @")
+"
+"function! Paste(mode)
+"    let @" = system('win32yank.exe -o --lf')
+"	return a:mode
+"endfunction
+"map <expr> p Paste('p')
+"map <expr> P Paste('P')
 " --- || ---
 " ------------ || ------------
 
@@ -88,19 +88,27 @@ hi VertSplit cterm=NONE ctermfg=4
 
 " Manually set the status line color.
 hi StatusLine ctermbg=black ctermfg=green
-hi StatusLineNC ctermbg=green ctermfg=14 "Dark Green
+hi StatusLineNC ctermbg=green ctermfg=8
 "hi StatusLineTerm ctermbg=black ctermfg=green guibg=magenta guifg=red
 "hi StatusLineTermNC ctermbg=black ctermfg=green guibg=magenta guifg=red
 
-hi Visual ctermbg=0 ctermfg=green
-hi LineNr ctermfg=yellow
+hi Identifier cterm=bold ctermfg=green
+hi Statement cterm=bold ctermfg=56
+hi Special cterm=bold ctermfg=red
+hi Type cterm=bold ctermfg=green
+hi PreProc cterm=bold ctermfg=12	"orange
+hi String ctermfg=12	
+
+hi Visual ctermbg=4 ctermfg=green
+hi Include ctermfg=yellow
+hi LineNr cterm=bold ctermfg=3
+
+hi Comment ctermfg=6
+
 hi Folded ctermfg=yellow ctermbg=black
 hi FoldColumn ctermfg=yellow ctermbg=black
-hi Comment ctermfg=14	"Dark Green
 hi jsonQuote ctermfg=red
-hi Include ctermfg=3	"Purple
-hi Error term=reverse cterm=bold ctermfg=black ctermbg=5 "Red
-hi Special cterm=bold ctermfg=5  "Red
+hi Error term=reverse cterm=bold ctermfg=black ctermbg=red
 hi MatchParen ctermfg=0
 
 " Git
@@ -117,7 +125,7 @@ call matchadd("redOnes", '\<\cNULL\>')
 call matchadd("redones", '\Error\')
 
 " Green
-highlight greenOnes ctermfg=green
+highlight greenOnes cterm=bold ctermfg=green
 call matchadd("greenOnes", '\<\cTrue\>')
 
 " Grey
@@ -247,8 +255,6 @@ nnoremap ,lx3s :-1read ~/.vim/snippets/latex/.subsubsection<CR>14la
 nnoremap ,pdb :-1read ~/.vim/snippets/python/.pdb<CR>0i<Tab>
 " - || -
 " --- || ---
-
-
 
 "netrw
 let g:netrw_banner=0
