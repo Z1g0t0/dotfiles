@@ -1,1 +1,1 @@
-[<img src="Flawless_picardia.png">]
+[<img src="flawless_picardia.png">]
