@@ -1,0 +1,8 @@
+#!/bin/bash
+
+# grabbing screen width and height
+RES=`xdpyinfo | awk '/dimensions/{print $2}'`
+W=`echo $RES | cut -f1 -dx`
+
+wmctrl -r :ACTIVE: -b remove,maximized_vert,maximized_horz
+wmctrl -r :ACTIVE: -e 3,$((W/2)),3,$((W/2)),-1 && wmctrl -r :ACTIVE: -b add,maximized_vert
